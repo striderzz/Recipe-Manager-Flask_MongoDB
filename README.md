@@ -1,94 +1,105 @@
-# 🥗 Recipe Manager - Flask + MongoDB
+# Recipe Manager - Flask + MongoDB
 
-A full-stack **Recipe Management Web Application** built using **Flask**, **MongoDB Atlas**, and **Bootstrap 5**.  
-This app allows users to register, log in securely, and manage their personal collection of recipes with rich metadata including ingredients, steps, categories, and cuisines.
+A full-stack **Recipe Management Web Application** built using **Flask**, **MongoDB Atlas**, and **Bootstrap 5**.
+
+Users can securely register, log in, and manage their personal collection of recipes, including title, ingredients, steps, category, and cuisine.
 
 ---
 
-## 🚀 Features
+## Features
 
-- 🔐 **User Authentication** (Register, Login, Logout) using `Flask-Login`
-- ✅ Secure Passwords with `werkzeug.security` (hashed and verified)
-- 📖 **CRUD Functionality** for recipes:
-  - Add, View, Edit, Delete
-- 🏷️ Recipe Categorization by:
+- User Authentication (Register, Login, Logout) using `Flask-Login`
+- Secure password hashing with `werkzeug.security`
+- Full CRUD functionality for recipes: Add, View, Edit, Delete
+- Recipe categorization by:
   - **Category**: Breakfast, Lunch, Dinner, etc.
   - **Cuisine**: Italian, Indian, Chinese, etc.
-- 📁 MongoDB Atlas for cloud-based storage
-- 🎨 Clean and responsive UI with **Bootstrap 5** and custom styling
-- 🌈 Aesthetic gradient backgrounds and card-based layout
-- 🧪 Modular and readable Python backend using `Flask` best practices
+- Cloud-based MongoDB Atlas database integration
+- Responsive frontend with Bootstrap 5 and custom CSS
+- Gradient backgrounds and a modern UI
+- Clean Flask code structure with modular routing
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-### 🔙 Backend
+### Backend
 - [Flask](https://flask.palletsprojects.com/)
 - [Flask-Login](https://flask-login.readthedocs.io/en/latest/)
 - [Flask-PyMongo](https://flask-pymongo.readthedocs.io/)
-- [Werkzeug Security](https://werkzeug.palletsprojects.com/) for password hashing
+- [Werkzeug](https://werkzeug.palletsprojects.com/) (for password hashing)
 
-### 🗃️ Database
-- [MongoDB Atlas](https://www.mongodb.com/atlas/database) (NoSQL)
-- BSON object handling via `bson.ObjectId`
+### Database
+- [MongoDB Atlas](https://www.mongodb.com/atlas)
+- BSON document handling with `bson.ObjectId`
 
-### 🎨 Frontend
+### Frontend
 - [Bootstrap 5](https://getbootstrap.com/)
-- Jinja2 Templating (Flask's default template engine)
-- HTML5 + CSS3
+- Jinja2 Templates
+- HTML5 & CSS3
 
 ---
 
-## 🔌 API Routes Overview
+## API Routes
 
-| Method | Route                      | Description                       |
-|--------|----------------------------|-----------------------------------|
-| GET    | `/`                        | Redirects to login page           |
-| GET/POST | `/register`              | Register a new user               |
-| GET/POST | `/login`                 | Login user                        |
-| GET    | `/logout`                 | Logout the current user           |
-| GET    | `/home`                   | Dashboard showing all recipes     |
-| GET    | `/todos/<id>`            | View recipe details by ID         |
-| GET/POST | `/add_recipe`           | Add a new recipe                  |
-| GET/POST | `/update_todo/<id>`     | Update a specific recipe          |
-| GET/POST | `/delete_todo/<id>`     | Confirm & delete a recipe         |
+All core routes in the app:
 
-🔐 All recipe routes are protected using `@login_required`.
+- `GET /`  
+  Redirects to the login page.
 
----
+- `GET, POST /register`  
+  Register a new user.
 
-## 📸 Screenshots
+- `GET, POST /login`  
+  Login with username and password.
 
-> _📷 Add screenshots of your UI below. Replace placeholders with actual images in `/static/img/` or hosted URLs._
+- `GET /logout`  
+  Logout the current user.
 
-### 🔐 Login Page
-![Login](![recipe_login](https://github.com/user-attachments/assets/4c848036-1722-4d92-945a-bc96dafe308f)
-)
+- `GET /home`  
+  Dashboard showing all recipes for the logged-in user.
 
-### 📝 Register Page
-![Register]!(https://github.com/user-attachments/assets/4fbcb83b-0691-4954-8e42-20a7d619fdfa)
-()
+- `GET /todos/<id>`  
+  View a specific recipe by ID.
 
-### 🏠 Dashboard (Recipe List)
-![Dashboard](https://via.placeholder.com/800x400?text=Dashboard+Page)
+- `GET, POST /add_recipe`  
+  Add a new recipe to the user’s list.
 
-### 📄 Recipe Details
-![Recipe Detail](https://via.placeholder.com/800x400?text=Recipe+Detail)
+- `GET, POST /update_todo/<id>`  
+  Update the details of a specific recipe.
 
-### ✏️ Edit Recipe
-![Edit Recipe](https://via.placeholder.com/800x400?text=Edit+Recipe)
+- `GET, POST /delete_todo/<id>`  
+  Confirm and delete a recipe by ID.
 
-### ❌ Delete Confirmation
-![Delete Recipe](https://via.placeholder.com/800x400?text=Delete+Confirmation)
+**Note:** All recipe-related routes are protected using `@login_required`.
 
 ---
 
-## 📦 Installation
+## Screenshots
 
-Follow these steps to run the project locally.
+Add real screenshots here once available. Below are placeholders:
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/your-username/recipe-manager-flask.git
-cd recipe-manager-flask
+### Login Page  
+
+![recipe_login](https://github.com/user-attachments/assets/d8a0c085-a1e1-43ae-a6b8-1f434414d188)
+
+### Register Page  
+![recipe_register](https://github.com/user-attachments/assets/7f3d7404-4938-4c9b-a16f-d206b1226a24)
+
+
+### Dashboard  
+![recipe_dashboard](https://github.com/user-attachments/assets/b58393c1-44fd-421e-b45d-726933468329)
+
+
+### Recipe Details  
+![recipe1](https://github.com/user-attachments/assets/bd17820b-ea16-4004-971c-09d4e78ac0b0)
+
+
+### Recipe Details 2
+![recipe2](https://github.com/user-attachments/assets/2e69923c-92b2-4961-99be-91c9f07c51bc)
+
+
+### Delete Confirmation  
+
+![recipe_delete](https://github.com/user-attachments/assets/afd4f4db-dc4f-45fe-8cf8-6857abb57b2a)
+
