@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}
+Home
+{% endblock %}
+
+
+
+{% block content %}
+<div class="container mt-5">
+  <!-- Page Title -->
+   <br>
+  <h1 class="text-center mb-4">Recipe Manager</h1>
+
+  <!-- Welcome Message -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h4>Welcome, {{ current_user.username }}!</h4>
+    <a href="{{ url_for('logout') }}" class="btn btn-outline-secondary">Logout</a>
+  </div>
+
+  <!-- Add Recipe Button -->
+  <div class="mb-4">
+    <a href="{{ url_for('add_recipe') }}" class="btn btn-success">+ Add Recipe</a>
+  </div>
+
+  <!-- Recipe Count -->
+  <h5 class="mb-3">Recipes ({{ recipes|length }})</h5>
+
+  {% if recipes|length == 0 %}
+    <div class="alert alert-info">Your recipe list is empty.</div>
+  {% else %}
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      {% for recipe in recipes %}
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">{{ recipe.title }}</h5>
+              <p class="card-text">
+                <strong>Category:</strong> {{ recipe.category }}<br>
+                <strong>Cuisine:</strong> {{ recipe.cuisine }}
+              </p>
+              <a href="{{ url_for('get_recipe', id=recipe._id) }}" class="btn btn-primary">View</a>
+              <a href="{{ url_for('update_recipe', id=recipe._id) }}" class="btn btn-warning">Edit</a>
+              <a href="{{ url_for('delete_recipe', id=recipe._id) }}" class="btn btn-danger">Delete</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
+{% endblock %}
